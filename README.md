@@ -17,6 +17,16 @@ python run.py
 
 ## Postgres
 psql forest
+or
+psql postgres
+
+\list: lists all the databases in Postgres
+\connect: connect to a specific database
+\dt: list the tables in the currently connected database
+
+## SQLAlchemy
+python migrate.py db init
+python migrate.py db migrate
 
 # Tutorial
 https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx
