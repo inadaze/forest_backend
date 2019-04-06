@@ -26,7 +26,10 @@ psql postgres
 
 ## SQLAlchemy
 python migrate.py db init
+
+### apply migrations
 python migrate.py db migrate
+python migrate.py db upgrade
 
 # Tutorial
 https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx

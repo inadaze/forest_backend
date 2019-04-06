@@ -1,12 +1,24 @@
 from flask_restful import Resource
 from flask import request
+from Model import db, Seed, SeedSchema
+
+seeds_schema = SeedSchema(many=True)
+seed_schema = SeedSchema()
 
 seeds = {}
 
 class AddSeed(Resource):
     def get(self, seed_id):
-        return {seed_id: seeds[seed_id]}
+        seeds = Seed.query.all()
+        seeds = seeds_schema.dump(seeds).data
+        return {'status': 'success', 'data': seeds}, 200
 
     def put(self, seed_id):
-        seeds[seed_id] = request.get_json()
-        return {seed_id: seeds[seed_id]}
+        seed = request.get_json()
+        seed = Seed(
+            seed_id=seed_id,
+            word=seed['word']
+        )
+        db.session.add(seed)
+        db.session.commit()
+        return { "status": 'success' }, 204
