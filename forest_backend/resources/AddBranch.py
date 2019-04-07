@@ -7,7 +7,7 @@ branch_schema = BranchSchema()
 
 class AddBranch(Resource):
     def get(self, seed_id):
-        branches = Branch.query.all()
+        branches = db.session.query(Branch).join(Tree, Branch.id==Tree.branch_id)
         branches = branches_schema.dump(branches).data
         return {'status': 'success', 'data': branches}, 200
 
