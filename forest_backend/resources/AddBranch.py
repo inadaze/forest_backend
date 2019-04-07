@@ -14,7 +14,8 @@ class AddBranch(Resource):
     def put(self, seed_id):
         branch = request.get_json()
         branch = Branch(
-            idea=branch['idea'] 
+            idea=branch['idea'],
+            level=branch['level']
         )
         db.session.add(branch)
         db.session.flush()
