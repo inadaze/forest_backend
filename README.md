@@ -35,3 +35,6 @@ python migrate.py db upgrade
 https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx
 https://medium.com/@Umesh_Kafle/postgresql-and-postgis-installation-in-mac-os-87fa98a6814d
 
+
+# Queries
+select idea from branches where id in (select branch_id from trees where seed_id='moon_seed');
