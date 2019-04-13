@@ -16,7 +16,7 @@ class Growth(object):
     # first level
     def sprout(self):
         synonym_url = self.url + "excellent" + "/synonyms"
-        response = requests.get(self.url, headers=self.headers)
+        response = requests.get(synonym_url, headers=self.headers)
         json_data = json.loads(response.text)
         synonyms = self.json_helper.get_synonyms(json_data)
         print(synonyms)
