@@ -1,23 +1,26 @@
-import time
-import requests
 import json
+import requests
 from forest_backend.scheduler.json_helper import JsonHelper
+from forest_backend.scheduler.external_api_configs.oxford_dictionary import config
 
 class Growth(object): 
-    url = 'https://od-api.oxforddictionaries.com/api/v1/entries/en/excellent/synonyms'
+    url = None
+    headers = {'app_id': '53e47906', "app_key": "d469e72695b750d658d9289f7f580bfd"}
+    json_helper = None
 
     def __init__(self):
+        self.url = config['url']
+        self.json_helper = JsonHelper()
         print('Growth')
 
     # first level
     def sprout(self):
-        headers = {'app_id': '53e47906', "app_key": "d469e72695b750d658d9289f7f580bfd"}
-        response = requests.get(self.url, headers=headers)
+        synonym_url = self.url + "excellent" + "/synonyms"
+        response = requests.get(self.url, headers=self.headers)
         json_data = json.loads(response.text)
-        json_helper = JsonHelper()
-        synonyms = json_helper.get_synonyms(json_data)
-        print('Sprout')
+        synonyms = self.json_helper.get_synonyms(json_data)
         print(synonyms)
+        return synonyms
 
     # last level
     def snag(self):

@@ -1,0 +1,469 @@
+{
+    "metadata": {
+        "provider": "Oxford University Press"
+    },
+    "results": [
+        {
+            "id": "excellent",
+            "language": "en",
+            "lexicalEntries": [
+                {
+                    "entries": [
+                        {
+                            "homographNumber": "000",
+                            "senses": [
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "the wine was good and the meal excellent"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0005176.001",
+                                    "subsenses": [
+                                        {
+                                            "id": "ide01952ec-3502-4e32-b5f8-dbdba4a497f3",
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "super",
+                                                    "language": "en",
+                                                    "text": "super"
+                                                },
+                                                {
+                                                    "id": "a1",
+                                                    "language": "en",
+                                                    "text": "A1"
+                                                },
+                                                {
+                                                    "id": "ace",
+                                                    "language": "en",
+                                                    "text": "ace"
+                                                },
+                                                {
+                                                    "id": "great",
+                                                    "language": "en",
+                                                    "text": "great"
+                                                },
+                                                {
+                                                    "id": "terrific",
+                                                    "language": "en",
+                                                    "text": "terrific"
+                                                },
+                                                {
+                                                    "id": "tremendous",
+                                                    "language": "en",
+                                                    "text": "tremendous"
+                                                },
+                                                {
+                                                    "id": "fantastic",
+                                                    "language": "en",
+                                                    "text": "fantastic"
+                                                },
+                                                {
+                                                    "id": "fab",
+                                                    "language": "en",
+                                                    "text": "fab"
+                                                },
+                                                {
+                                                    "id": "supercalifragilisticexpialidocious",
+                                                    "language": "en",
+                                                    "text": "supercalifragilisticexpialidocious"
+                                                },
+                                                {
+                                                    "id": "top-notch",
+                                                    "language": "en",
+                                                    "text": "top-notch"
+                                                },
+                                                {
+                                                    "id": "tip-top",
+                                                    "language": "en",
+                                                    "text": "tip-top"
+                                                },
+                                                {
+                                                    "id": "class",
+                                                    "language": "en",
+                                                    "text": "class"
+                                                },
+                                                {
+                                                    "id": "awesome",
+                                                    "language": "en",
+                                                    "text": "awesome"
+                                                },
+                                                {
+                                                    "id": "magic",
+                                                    "language": "en",
+                                                    "text": "magic"
+                                                },
+                                                {
+                                                    "id": "wicked",
+                                                    "language": "en",
+                                                    "text": "wicked"
+                                                },
+                                                {
+                                                    "id": "cool",
+                                                    "language": "en",
+                                                    "text": "cool"
+                                                },
+                                                {
+                                                    "id": "out_of_this_world",
+                                                    "language": "en",
+                                                    "text": "out of this world"
+                                                },
+                                                {
+                                                    "id": "too_good_to_be_true",
+                                                    "language": "en",
+                                                    "text": "too good to be true"
+                                                },
+                                                {
+                                                    "id": "mind-blowing",
+                                                    "language": "en",
+                                                    "text": "mind-blowing"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "idd064a589-8824-4e82-9509-f665f900316e",
+                                            "regions": [
+                                                "British"
+                                            ],
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "brilliant",
+                                                    "language": "en",
+                                                    "text": "brilliant"
+                                                },
+                                                {
+                                                    "id": "brill",
+                                                    "language": "en",
+                                                    "text": "brill"
+                                                },
+                                                {
+                                                    "id": "smashing",
+                                                    "language": "en",
+                                                    "text": "smashing"
+                                                },
+                                                {
+                                                    "id": "champion",
+                                                    "language": "en",
+                                                    "text": "champion"
+                                                },
+                                                {
+                                                    "id": "bosting",
+                                                    "language": "en",
+                                                    "text": "bosting"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "idbef74787-db08-4da1-b23d-e967789ce632",
+                                            "regions": [
+                                                "North American"
+                                            ],
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "badass",
+                                                    "language": "en",
+                                                    "text": "badass"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "idb65754c9-1bfa-4dcc-8ca3-c19daf2d730b",
+                                            "regions": [
+                                                "US"
+                                            ],
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "awesomesauce",
+                                                    "language": "en",
+                                                    "text": "awesomesauce"
+                                                },
+                                                {
+                                                    "id": "on_fleek",
+                                                    "language": "en",
+                                                    "text": "on fleek"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "id64dc9d54-452f-4523-adc2-fb895b3751df",
+                                            "regions": [
+                                                "Australian"
+                                            ],
+                                            "registers": [
+                                                "informal"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "beaut",
+                                                    "language": "en",
+                                                    "text": "beaut"
+                                                },
+                                                {
+                                                    "id": "bonzer",
+                                                    "language": "en",
+                                                    "text": "bonzer"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "id3d3ba519-24a1-49ed-bbe4-84a373cdc022",
+                                            "regions": [
+                                                "British"
+                                            ],
+                                            "registers": [
+                                                "informal",
+                                                "dated"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "spiffing",
+                                                    "language": "en",
+                                                    "text": "spiffing"
+                                                },
+                                                {
+                                                    "id": "ripping",
+                                                    "language": "en",
+                                                    "text": "ripping"
+                                                },
+                                                {
+                                                    "id": "topping",
+                                                    "language": "en",
+                                                    "text": "topping"
+                                                },
+                                                {
+                                                    "id": "top-hole",
+                                                    "language": "en",
+                                                    "text": "top-hole"
+                                                },
+                                                {
+                                                    "id": "wizard",
+                                                    "language": "en",
+                                                    "text": "wizard"
+                                                },
+                                                {
+                                                    "id": "capital",
+                                                    "language": "en",
+                                                    "text": "capital"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "id8ea30ae4-e1ee-42f1-91f8-4342173d9282",
+                                            "regions": [
+                                                "North American"
+                                            ],
+                                            "registers": [
+                                                "informal",
+                                                "dated"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "swell",
+                                                    "language": "en",
+                                                    "text": "swell"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "id2023e553-d505-4986-bbca-2a66a644fb27",
+                                            "regions": [
+                                                "NZ",
+                                                "Australian"
+                                            ],
+                                            "registers": [
+                                                "informal",
+                                                "dated"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "bosker",
+                                                    "language": "en",
+                                                    "text": "bosker"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "idc39645eb-66a9-4797-a39d-06d33ca99f8a",
+                                            "registers": [
+                                                "vulgar slang"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "shit_hot",
+                                                    "language": "en",
+                                                    "text": "shit hot"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "idad56b31c-0452-4a23-81f6-ec3c776fc4f7",
+                                            "registers": [
+                                                "rare"
+                                            ],
+                                            "synonyms": [
+                                                {
+                                                    "id": "applaudable",
+                                                    "language": "en",
+                                                    "text": "applaudable"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "synonyms": [
+                                        {
+                                            "id": "very_good",
+                                            "language": "en",
+                                            "text": "very good"
+                                        },
+                                        {
+                                            "id": "superb",
+                                            "language": "en",
+                                            "text": "superb"
+                                        },
+                                        {
+                                            "id": "outstanding",
+                                            "language": "en",
+                                            "text": "outstanding"
+                                        },
+                                        {
+                                            "id": "magnificent",
+                                            "language": "en",
+                                            "text": "magnificent"
+                                        },
+                                        {
+                                            "id": "of_high_quality",
+                                            "language": "en",
+                                            "text": "of high quality"
+                                        },
+                                        {
+                                            "id": "of_the_highest_quality",
+                                            "language": "en",
+                                            "text": "of the highest quality"
+                                        },
+                                        {
+                                            "id": "of_the_highest_standard",
+                                            "language": "en",
+                                            "text": "of the highest standard"
+                                        },
+                                        {
+                                            "id": "exceptional",
+                                            "language": "en",
+                                            "text": "exceptional"
+                                        },
+                                        {
+                                            "id": "marvellous",
+                                            "language": "en",
+                                            "text": "marvellous"
+                                        },
+                                        {
+                                            "id": "wonderful",
+                                            "language": "en",
+                                            "text": "wonderful"
+                                        },
+                                        {
+                                            "id": "sublime",
+                                            "language": "en",
+                                            "text": "sublime"
+                                        },
+                                        {
+                                            "id": "perfect",
+                                            "language": "en",
+                                            "text": "perfect"
+                                        },
+                                        {
+                                            "id": "eminent",
+                                            "language": "en",
+                                            "text": "eminent"
+                                        },
+                                        {
+                                            "id": "pre-eminent",
+                                            "language": "en",
+                                            "text": "pre-eminent"
+                                        },
+                                        {
+                                            "id": "matchless",
+                                            "language": "en",
+                                            "text": "matchless"
+                                        },
+                                        {
+                                            "id": "peerless",
+                                            "language": "en",
+                                            "text": "peerless"
+                                        },
+                                        {
+                                            "id": "supreme",
+                                            "language": "en",
+                                            "text": "supreme"
+                                        },
+                                        {
+                                            "id": "first-rate",
+                                            "language": "en",
+                                            "text": "first-rate"
+                                        },
+                                        {
+                                            "id": "first-class",
+                                            "language": "en",
+                                            "text": "first-class"
+                                        },
+                                        {
+                                            "id": "superior",
+                                            "language": "en",
+                                            "text": "superior"
+                                        },
+                                        {
+                                            "id": "superlative",
+                                            "language": "en",
+                                            "text": "superlative"
+                                        },
+                                        {
+                                            "id": "splendid",
+                                            "language": "en",
+                                            "text": "splendid"
+                                        },
+                                        {
+                                            "id": "admirable",
+                                            "language": "en",
+                                            "text": "admirable"
+                                        },
+                                        {
+                                            "id": "worthy",
+                                            "language": "en",
+                                            "text": "worthy"
+                                        },
+                                        {
+                                            "id": "sterling",
+                                            "language": "en",
+                                            "text": "sterling"
+                                        },
+                                        {
+                                            "id": "fine",
+                                            "language": "en",
+                                            "text": "fine"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en",
+                    "lexicalCategory": "Adjective",
+                    "text": "excellent"
+                }
+            ],
+            "type": "headword",
+            "word": "excellent"
+        }
+    ]
+}
