@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Python: Current File (Integrated Terminal)",
             "type": "python",
@@ -50,14 +51,17 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "forest_backend/app.py"
+                "FLASK_APP": "forest_backend/api/app.py"
             },
             "args": [
                 "run",
                 "--no-debugger",
                 "--no-reload"
             ],
-            "jinja": true
+            "jinja": true,
+            "preLaunchTask": "Run postgres",
+            "postDebugTask": "Stop postgres"
+            //"preLaunchTask": "Run Scheduler"
         },
         {
             "name": "Python: Current File (External Terminal)",

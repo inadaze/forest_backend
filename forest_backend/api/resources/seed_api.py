@@ -1,13 +1,12 @@
 from flask_restful import Resource
 from flask import request
-from Model import db, Seed, SeedSchema
+from forest_backend.database.models.seed_model import Seed, SeedSchema
+from forest_backend.database.sql_db import db
 
 seeds_schema = SeedSchema(many=True)
 seed_schema = SeedSchema()
 
-seeds = {}
-
-class AddSeed(Resource):
+class SeedApi(Resource):
     def get(self, seed_id):
         seeds = Seed.query.all()
         seeds = seeds_schema.dump(seeds).data

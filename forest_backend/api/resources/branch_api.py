@@ -1,11 +1,13 @@
 from flask_restful import Resource
 from flask import request
-from Model import db, Branch, BranchSchema, Tree, TreeSchema
+from forest_backend.database.models.branch_model import Branch, BranchSchema
+from forest_backend.database.models.tree_model import Tree, TreeSchema
+from forest_backend.database.sql_db import db
 
 branches_schema = BranchSchema(many=True)
 branch_schema = BranchSchema()
 
-class AddBranch(Resource):
+class BranchApi(Resource):
     def get(self, seed_id):
         branches = db.session.query(Branch).join(Tree, Branch.id==Tree.branch_id)
         branches = branches_schema.dump(branches).data

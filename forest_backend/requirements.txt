@@ -9,3 +9,4 @@ marshmallow-sqlalchemy==0.16.1
 psycopg2-binary==2.8
 pylint-flask==0.6
 APScheduler==3.6.0
+requests==2.21.0
