@@ -28,8 +28,11 @@ psql postgres
 python migrate.py db init
 
 ### apply migrations
+NOTE: make sure postgress is running first
+execute from inside github/forest_backend repo folder
 python migrate.py db migrate
 python migrate.py db upgrade
+
 
 # Tutorial
 https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx

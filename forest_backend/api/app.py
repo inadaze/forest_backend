@@ -19,7 +19,7 @@ app.config.from_pyfile('config.py')
 
 app.register_blueprint(api_bp, url_prefix='/api')
 
-scheduler = ForestScheduler()
-atexit.register(lambda: scheduler.scheduler.shutdown())
+#scheduler = ForestScheduler()
+#atexit.register(lambda: scheduler.scheduler.shutdown())
 
 db.init_app(app)

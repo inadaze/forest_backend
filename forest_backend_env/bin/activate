@@ -74,3 +74,6 @@ fi
 if [ -n "${BASH:-}" -o -n "${ZSH_VERSION:-}" ] ; then
     hash -r
 fi
+
+PYTHONPATH="/Users/jasons/Source/github/forest_backend/forest_backend:$PYTHONPATH"
+export PYTHONPATH

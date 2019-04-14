@@ -1,8 +1,8 @@
 from flask_restful import Resource
 from flask import request
-from forest_backend.database.models.tree_model import Tree, TreeSchema
-from forest_backend.database.models.branch_model import Branch, BranchSchema
-from forest_backend.database.sql_db import db
+from database.models.tree_model import Tree, TreeSchema
+from database.models.branch_model import Branch, BranchSchema
+from database.sql_db import db
 
 trees_schema = TreeSchema(many=True)
 tree_schema = TreeSchema()

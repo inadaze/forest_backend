@@ -9,15 +9,18 @@ class Tree(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     seed_id = db.Column(db.String(250), nullable=False)
     branch_id = db.Column(db.Integer, primary_key=False)
+    level_id = db.Column(db.Integer, primary_key=False)
     creation_date = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
     last_modified_date = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
 
-    def __init__(self, seed_id, branch_id):
+    def __init__(self, seed_id, branch_id, level_id):
         self.seed_id = seed_id
         self.branch_id = branch_id
+        self.level_id = level_id
 
 class TreeSchema(ma.Schema):
     seed_id = fields.String(required=True, dump_only=True)
     branch_id = fields.Integer(required=True, dump_only=True)
+    level_id = fields.Integer(required=True, dump_only=True)
     creation_date = fields.DateTime()
     last_modified_date = fields.DateTime()

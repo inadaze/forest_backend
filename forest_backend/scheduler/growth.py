@@ -3,7 +3,7 @@ import requests
 from forest_backend.scheduler.json_helper import JsonHelper
 from forest_backend.scheduler.external_api_configs.oxford_dictionary import config
 
-class Growth(object): 
+class Growth(object):
     url = None
     headers = {'app_id': '53e47906', "app_key": "d469e72695b750d658d9289f7f580bfd"}
     json_helper = None
