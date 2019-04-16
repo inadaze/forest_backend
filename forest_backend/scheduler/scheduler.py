@@ -1,6 +1,6 @@
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 from apscheduler.schedulers.background import BlockingScheduler
-from forest_backend.scheduler.growth import Growth
+from forest_backend.logic.growth import Growth
 
 class ForestScheduler():
     scheduler = None

@@ -1,6 +1,6 @@
 import json
 import pytest
-from forest_backend.scheduler.json_helper import JsonHelper
+from forest_backend.logic.json_helper import JsonHelper
 
 def test_get_synonyms_returns_list(synonym_response):
     json_helper = JsonHelper()

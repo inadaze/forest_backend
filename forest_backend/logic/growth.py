@@ -1,7 +1,7 @@
 import json
 import requests
-from forest_backend.scheduler.json_helper import JsonHelper
-from forest_backend.scheduler.external_api_configs.oxford_dictionary import config
+from forest_backend.logic.json_helper import JsonHelper
+from forest_backend.logic.external_api_configs.oxford_dictionary import config
 
 class Growth(object):
     url = None
@@ -25,3 +25,6 @@ class Growth(object):
     # last level
     def snag(self):
         print('Snag')
+    
+    def get_new_trees(self):
+        print('Getting new trees')
