@@ -1,6 +1,7 @@
 from flask_restful import Resource
 from flask import request
 from forest_backend.database.models.tree_model import Tree, TreeSchema
+from forest_backend.database.models.seed_model import Seed
 from forest_backend.database.models.branch_model import Branch, BranchSchema
 from forest_backend.database.sql_db import db
 
@@ -15,7 +16,8 @@ class TreeApi(Resource):
 
 class TreesApi(Resource):
     def get(self):
-        req = request.get_json()
-        trees = Tree.query.filter_by(level_id=req['level'])
-        trees = tree_schema.dump(trees).data
+        #req = request.get_json()
+        trees = db.session.query(Tree).join(Seed).filter(Tree.seed_id==Seed.id).all()
+        # trees = Tree.query.filter_by(level_id=req['level'])
+        trees = trees_schema.dump(trees).data
         return {'status': 'success', 'data': trees}, 200
