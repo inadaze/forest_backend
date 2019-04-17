@@ -4,28 +4,32 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import Sequence
 from forest_backend.database.sql_db import db, ma
 from forest_backend.database.models.seed_model import SeedSchema
+from forest_backend.database.models.tree_level_model import TreeLevelSchema
 
 
 class Tree(db.Model):
     __tablename__ = 'trees'
     id = db.Column(db.Integer, primary_key=True)
     seed_id = db.Column(db.Integer, db.ForeignKey('seeds.id'))
+    level_id = db.Column(db.Integer, db.ForeignKey('tree_level.id'), default=0)
     #branches = db.relationship('Branch', backref='tree', lazy=True)
     #tree_level = db.relationship('Tree_Level', backref='tree', lazy=True, uselist=False)
     creation_date = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
     last_modified_date = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
 
     seed = db.relationship('Seed', back_populates='tree', uselist=False, lazy=True)
+    level = db.relationship('TreeLevel', back_populates='tree', uselist=False, lazy=True)
 
     def __init__(self, seed_id):
         self.seed = seed_id
     #    self.branches = branch_id
-    #    self.tree_level = level_id
+        
 
 class TreeSchema(ma.Schema):
     id = fields.Integer(required=True, dump_only=True)
     seed_id = fields.Integer(required=True, dump_only=True)
     seed = fields.Nested(SeedSchema())
-    #tree_level = fields.Integer(required=True, dump_only=True)
+    level_id = fields.Integer(required=True, dump_only=True)
+    level = fields.Nested(TreeLevelSchema())
     creation_date = fields.DateTime()
     last_modified_date = fields.DateTime()

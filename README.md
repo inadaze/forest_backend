@@ -42,3 +42,6 @@ https://medium.com/@Umesh_Kafle/postgresql-and-postgis-installation-in-mac-os-87
 # Queries
 select idea from branches where id in (select branch_id from trees where seed_id='moon_seed');
 select idea from branches inner join trees on branches.id=trees.branch_id where trees.seed_id='moon_seed';
+
+## Seeds not yet a tree
+select id from seeds where id not in (select seeds.id from seeds inner join trees on trees.seed_id=seeds.id);

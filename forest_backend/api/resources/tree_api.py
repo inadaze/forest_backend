@@ -14,6 +14,13 @@ class TreeApi(Resource):
         trees = tree_schema.dump(trees).data
         return {'status': 'success', 'data': trees}, 200
 
+    def put(self, seed_id):
+        #TODO: Need to test creating a tree
+        tree = Tree(seed_id)
+        db.session.add(tree)
+        db.session.commit()
+        return {"status": 'success'}, 204
+
 class TreesApi(Resource):
     def get(self):
         #req = request.get_json()

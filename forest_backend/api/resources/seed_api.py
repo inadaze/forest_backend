@@ -29,12 +29,14 @@ class SeedApi(Resource):
 
 class SeedsApi(Resource):
     def get(self):
-        seeds = None
-        if request.data:
-            data = request.get_json()
-            asdf = ""
-        else:
+        if not request.json:
             seeds = Seed.query.all()
-        
-        seeds = seeds_schema.dump(seeds).data
-        return {'status': 'success', 'data': seeds}, 200
+            seeds = seeds_schema.dump(seeds).data
+            return {'status': 'success', 'data': seeds}, 200
+        if 'tree_level' in request.json and type(request.json['tree_level']) == int:
+            tree_level = request.json.get('tree_level')
+            new_seeds = db.session.query(Seed).filter(~Seed.id.in_(
+                db.session.query(Tree.seed_id).join(Seed).filter(Seed.id==Tree.seed_id)
+                )).all()
+            new_seeds = seeds_schema.dump(new_seeds).data
+            return {'status': 'success', 'data': new_seeds}, 200
