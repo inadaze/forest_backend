@@ -1,7 +1,7 @@
 {
     "python.pythonPath": "forest_backend_env/bin/python",
     "python.unitTest.pyTestArgs": [
-        "forest_backend"
+        "."
     ],
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.nosetestsEnabled": false,
