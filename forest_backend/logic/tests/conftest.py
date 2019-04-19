@@ -5,7 +5,7 @@ import json
 def synonym_response():
     synonyms = None
     response = None
-    with open('forest_backend/logic/unittests/external_responses/synonyms.json', 'r') as myfile:
+    with open('forest_backend/logic/tests/external_responses/synonyms.json', 'r') as myfile:
         response = RestResponse(myfile.read())
 
     return response
@@ -14,7 +14,7 @@ def synonym_response():
 def get_new_trees_response():
     trees = None
     response = None
-    with open('forest_backend/logic/unittests/internal_responses/get_new_trees.json', 'r') as myfile:
+    with open('forest_backend/logic/tests/internal_responses/get_new_trees.json', 'r') as myfile:
         response = RestResponse(myfile.read())
 
     return response

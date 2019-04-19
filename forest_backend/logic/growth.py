@@ -12,7 +12,7 @@ class Growth(object):
 
     def __init__(self):
         self.url = config['url']
-        sefl.forest_url = forest_config['url']
+        self.forest_url = forest_config['url']
         self.json_helper = JsonHelper()
         print('Growth')
 
@@ -20,7 +20,7 @@ class Growth(object):
     def sprout(self):
         synonym_url = self.url + "excellent" + "/synonyms"
         get_seeds_url = self.forest_url + "seeds"
-        new_seeds = request.get(get_seeds_url)
+        new_seeds = requests.get(get_seeds_url)
         response = requests.get(synonym_url, headers=self.headers)
         json_data = json.loads(response.text)
         synonyms = self.json_helper.get_synonyms(json_data)
