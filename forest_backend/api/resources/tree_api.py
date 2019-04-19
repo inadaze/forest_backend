@@ -15,7 +15,6 @@ class TreeApi(Resource):
         return {'status': 'success', 'data': trees}, 200
 
     def put(self, seed_id):
-        #TODO: Need to test creating a tree
         tree = Tree(seed_id)
         db.session.add(tree)
         db.session.commit()

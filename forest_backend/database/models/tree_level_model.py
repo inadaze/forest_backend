@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import Sequence
 from forest_backend.database.sql_db import db, ma
 
-#TODO: this needs to be migrated into the db
 class TreeLevel(db.Model):
     __tablename__ = 'tree_levels'
 
@@ -13,7 +12,6 @@ class TreeLevel(db.Model):
     creation_date = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
 
     tree = db.relationship('Tree', back_populates='tree_level', uselist=False, lazy=True)
-
     def __init__(self, level_id, name):
         self.id = level_id
         self.name = name

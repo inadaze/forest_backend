@@ -8,15 +8,12 @@ from forest_backend.database.sql_db import db, ma
 class Seed(db.Model):
     __tablename__ = 'seeds'
     id = db.Column(db.Integer, primary_key=True)
-    #seed_id = db.Column(db.String(250), nullable=False)
     word = db.Column(db.String(250), nullable=False)
-    #tree_id = db.Column(db.Integer, db.ForeignKey('trees.id'))
     creation_date = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
 
     tree = db.relationship('Tree', back_populates='seed', uselist=False, lazy=True)
 
     def __init__(self, word):
-        #self.seed_id = seed_id
         self.word = word
 
 class SeedSchema(ma.Schema):

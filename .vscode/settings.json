@@ -8,5 +8,6 @@
     "python.unitTest.pyTestEnabled": true,
     "pythonTestExplorer.testFramework": "pytest",
     "python.unitTest.pyTestPath": "forest_backend_env/bin/pytest",
-    "python.linting.pylintPath": "forest_backend_env/bin/pylint"
+    "python.linting.pylintPath": "forest_backend_env/bin/pylint",
+    "todo-tree.excludedWorkspaces": ["forest_backend_env/"]
 }
