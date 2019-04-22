@@ -6,6 +6,7 @@ import pytest
 from forest_backend.api import app
 from forest_backend.database.sql_db import db
 from forest_backend.database.models.seed_model import Seed
+from forest_backend.database.inserts import populate, populate_test_data
 
 
 @pytest.fixture
@@ -16,9 +17,8 @@ def client():
 
     with app.app.app_context():
         db.create_all()
-        seed = Seed(word="floral")
-        db.session.add(seed)
-        db.session.commit()
+        populate(db)
+        populate_test_data(db)
 
     yield test_client
 
