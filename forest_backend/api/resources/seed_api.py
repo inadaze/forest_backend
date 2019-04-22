@@ -13,13 +13,23 @@ class SeedApi(Resource):
         return {'status': 'success', 'data': seed}, 200
 
     def put(self, seed_id):
-        seed = request.get_json()
-        seed = Seed(
-            word=seed['word']
-        )
-        db.session.add(seed)
-        db.session.commit()
-        return {"status": 'success'}, 204
+        if not request.json:
+            seed = Seed(
+                word=seed_id
+            )
+            db.session.add(seed)
+            db.session.commit()
+            return {"status": 'success'}, 204
+        if 'word' in request.json:
+            seed = request.get_json()
+            seed = Seed(
+                word=seed['word']
+            )
+            db.session.add(seed)
+            db.session.commit()
+            return {"status": 'success'}, 204
+        
+        return {"status": 'failure'}, 400
 
 class SeedsApi(Resource):
     def get(self):
