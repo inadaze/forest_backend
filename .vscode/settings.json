@@ -1,13 +1,12 @@
 {
     "python.pythonPath": "forest_backend_env/bin/python",
-    "python.unitTest.pyTestArgs": [
-        "."
-    ],
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.nosetestsEnabled": false,
     "python.unitTest.pyTestEnabled": true,
     "pythonTestExplorer.testFramework": "pytest",
-    "python.unitTest.pyTestPath": "forest_backend_env/bin/pytest",
+    "python.unitTest.pyTestPath": "pytest",
     "python.linting.pylintPath": "forest_backend_env/bin/pylint",
-    "todo-tree.excludedWorkspaces": ["forest_backend_env/"]
+    "todo-tree.excludedWorkspaces": [
+        "forest_backend_env/"
+    ]
 }
