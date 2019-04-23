@@ -10,7 +10,7 @@ import atexit
 api_bp = Blueprint('api', __name__)
 api = Api(api_bp)
 
-api.add_resource(SeedApi, '/seed/<string:seed_id>')
+api.add_resource(SeedApi, '/seed/<string:seed_id>', '/seed/')
 api.add_resource(BranchApi, '/branch/<string:seed_id>')
 api.add_resource(TreeApi, '/tree/<string:seed_id>')
 api.add_resource(TreesApi, '/trees')

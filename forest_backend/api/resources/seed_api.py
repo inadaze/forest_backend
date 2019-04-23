@@ -12,15 +12,15 @@ class SeedApi(Resource):
         seed = seeds_schema.dump(seed).data
         return {'status': 'success', 'data': seed}, 200
 
-    def put(self, seed_id):
-        if not request.json:
+    def put(self, seed_id=''):
+        if not request.get_json():
             seed = Seed(
                 word=seed_id
             )
             db.session.add(seed)
             db.session.commit()
             return {"status": 'success'}, 204
-        if 'word' in request.json:
+        if 'word' in request.get_json() and request.get_json()['word'] != '':
             seed = request.get_json()
             seed = Seed(
                 word=seed['word']
