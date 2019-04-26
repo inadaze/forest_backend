@@ -4,7 +4,7 @@ from forest_backend.api.resources.seed_api import SeedApi, SeedsApi
 from forest_backend.api.resources.branch_api import BranchApi
 from forest_backend.api.resources.tree_api import TreeApi, TreesApi
 from forest_backend.database.sql_db import db, ma
-from forest_backend.scheduler.scheduler import ForestScheduler
+from forest_backend.scheduler.forest_scheduler import ForestScheduler
 import atexit
 
 api_bp = Blueprint('api', __name__)
@@ -21,7 +21,7 @@ app.config.from_pyfile('config.py')
 
 app.register_blueprint(api_bp, url_prefix='/api')
 
-#scheduler = ForestScheduler()
-#atexit.register(lambda: scheduler.scheduler.shutdown())
+# scheduler = ForestScheduler()
+# atexit.register(lambda: scheduler.scheduler.shutdown())
 
 db.init_app(app)

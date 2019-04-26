@@ -2,7 +2,9 @@ import json
 from forest_backend.database.models.seed_model import Seed
 from forest_backend.database.sql_db import db
 
-
+# TODO: need to automatically start postgres db
+# before and stop after pytest test run
+# for api unit tests
 import pytest
 
 headers = {'content-type': 'application/json'}

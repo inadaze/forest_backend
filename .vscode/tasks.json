@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "/Users/jasons/Source/github/forest_backend/forest_backend_env/bin/python",
             "args": [
-                "${workspaceFolder}/forest_backend/scheduler/scheduler.py"
+                "${workspaceFolder}/forest_backend/scheduler/forest_scheduler.py"
             ]
         },
         {
@@ -29,6 +29,30 @@
                 "-D", "/usr/local/var/postgres",
                 "stop"
             ]
+        },
+        {
+            "label": "Run flask",
+            "type": "shell",
+            "isBackground": true,
+            "command": "/Users/jasons/Source/github/forest_backend/forest_backend_env/bin/python",
+            "options": {
+                "env": {
+                    "FLASK_APP": "forest_backend/api/app.py"
+                }
+              },
+            "args": [
+                "-m", "flask",
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "dependsOn": [
+                "Run postgres"
+            ],
+            "presentation": {
+                "reveal": "never",
+                "panel": "new"
+            }
         }
     ]
 }

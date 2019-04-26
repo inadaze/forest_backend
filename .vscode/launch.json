@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Unit Tests",
             "program": "pytest",
@@ -66,8 +67,14 @@
             ],
             "jinja": true,
             "preLaunchTask": "Run postgres",
-            "postDebugTask": "Stop postgres"
+            "postDebugTask": "Stop postgres",
             //"preLaunchTask": "Run Scheduler"
+        },
+        {
+            "name": "Python: Scheduler",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/forest_backend/scheduler/forest_scheduler.py"
         },
         {
             "name": "Python: Current File (External Terminal)",
