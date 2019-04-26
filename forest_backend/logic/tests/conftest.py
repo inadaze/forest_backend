@@ -3,7 +3,6 @@ import json
 
 @pytest.fixture
 def synonym_response():
-    synonyms = None
     response = None
     with open('forest_backend/logic/tests/external_responses/synonyms.json', 'r') as myfile:
         response = RestResponse(myfile.read())
@@ -11,11 +10,10 @@ def synonym_response():
     return response
 
 @pytest.fixture
-def get_new_trees_response():
-    trees = None
+def get_new_seeds_response():
     response = None
-    with open('forest_backend/logic/tests/internal_responses/get_new_trees.json', 'r') as myfile:
-        response = RestResponse(myfile.read())
+    with open('forest_backend/logic/tests/internal_responses/get_new_seeds.json', 'r') as myfile:
+        response = myfile.read()
 
     return response
 

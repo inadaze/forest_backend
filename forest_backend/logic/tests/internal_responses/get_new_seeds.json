@@ -1,0 +1,15 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "creation_date": "2019-04-25T13:11:39.973766+00:00",
+            "id": "1",
+            "word": "focus"
+        },
+        {
+            "creation_date": "2019-04-25T13:12:09.893289+00:00",
+            "id": "2",
+            "word": "miracle"
+        }
+    ]
+}
