@@ -49,3 +49,6 @@ def populate_test_data(db):
     db.session.add(tree1)
     db.session.add(tree2)
     db.session.commit()
+
+    # Create Branches
+    # TODO: need to create branches and attach to some trees

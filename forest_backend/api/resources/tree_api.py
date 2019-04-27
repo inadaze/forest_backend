@@ -35,12 +35,14 @@ class TreeApi(Resource):
 
 class TreesApi(Resource):
     def get(self):
-        app.logger.info('Fetching all seeds')
         if not request.get_json():
+            app.logger.info('Fetching all trees')
             trees = Tree.query.all()
             trees = trees_schema.dump(trees).data
             return {'status': 'success', 'data': trees}, 200
         if 'level_id' in request.get_json():
-            trees = db.session.query(Tree).join(Seed).filter(Tree.seed_id==Seed.id).filter(Tree.level_id==request.get_json()['level_id']).all()
+            tree_level = request.get_json()['level_id']
+            app.logger.info('Fetching all level %s trees', tree_level)
+            trees = db.session.query(Tree).join(Seed).filter(Tree.seed_id==Seed.id).filter(Tree.level_id==tree_level).all()
             trees = trees_schema.dump(trees).data
             return {'status': 'success', 'data': trees}, 200

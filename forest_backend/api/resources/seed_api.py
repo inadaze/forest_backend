@@ -43,16 +43,13 @@ class SeedsApi(Resource):
             seeds = Seed.query.all()
             seeds = seeds_schema.dump(seeds).data
             return {'status': 'success', 'data': seeds}, 200
-        #TODO: can I do this without adding the json body?  like just an extra path param or something?
         if level == 'new':
-            app.logger.info('Fetching all new seeds')
+            app.logger.info('Fetching all new seeds that do not have a tree')
 
-            #Get all seeds that don't have a tree
             new_seeds = db.session.query(Seed).filter(
                 ~Seed.id.in_(
                     db.session.query(Tree.seed_id).join(Seed).filter(Seed.id==Tree.seed_id)
                 )
             ).all()
-            #new_seeds = db.session.query(Seed).join(Tree).filter(Seed.id==Tree.seed_id).filter(Tree.level_id==tree_level)
             new_seeds = seeds_schema.dump(new_seeds).data
             return {'status': 'success', 'data': new_seeds}, 200

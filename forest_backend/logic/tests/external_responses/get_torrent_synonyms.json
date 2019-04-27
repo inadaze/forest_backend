@@ -1,0 +1,217 @@
+{
+    "metadata": {
+        "provider": "Oxford University Press"
+    },
+    "results": [
+        {
+            "id": "torrent",
+            "language": "en",
+            "lexicalEntries": [
+                {
+                    "entries": [
+                        {
+                            "homographNumber": "000",
+                            "senses": [
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "they were swept down the hillside in a torrent of water"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0014996.001",
+                                    "synonyms": [
+                                        {
+                                            "id": "flood",
+                                            "language": "en",
+                                            "text": "flood"
+                                        },
+                                        {
+                                            "id": "deluge",
+                                            "language": "en",
+                                            "text": "deluge"
+                                        },
+                                        {
+                                            "id": "inundation",
+                                            "language": "en",
+                                            "text": "inundation"
+                                        },
+                                        {
+                                            "id": "spate",
+                                            "language": "en",
+                                            "text": "spate"
+                                        },
+                                        {
+                                            "id": "cascade",
+                                            "language": "en",
+                                            "text": "cascade"
+                                        },
+                                        {
+                                            "id": "rush",
+                                            "language": "en",
+                                            "text": "rush"
+                                        },
+                                        {
+                                            "id": "stream",
+                                            "language": "en",
+                                            "text": "stream"
+                                        },
+                                        {
+                                            "id": "current",
+                                            "language": "en",
+                                            "text": "current"
+                                        },
+                                        {
+                                            "id": "gushing",
+                                            "language": "en",
+                                            "text": "gushing"
+                                        },
+                                        {
+                                            "id": "flow",
+                                            "language": "en",
+                                            "text": "flow"
+                                        },
+                                        {
+                                            "id": "overflow",
+                                            "language": "en",
+                                            "text": "overflow"
+                                        },
+                                        {
+                                            "id": "tide",
+                                            "language": "en",
+                                            "text": "tide"
+                                        },
+                                        {
+                                            "id": "fountain",
+                                            "language": "en",
+                                            "text": "fountain"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "the rain fell in torrents"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0014996.002",
+                                    "synonyms": [
+                                        {
+                                            "id": "downpour",
+                                            "language": "en",
+                                            "text": "downpour"
+                                        },
+                                        {
+                                            "id": "deluge",
+                                            "language": "en",
+                                            "text": "deluge"
+                                        },
+                                        {
+                                            "id": "rainstorm",
+                                            "language": "en",
+                                            "text": "rainstorm"
+                                        },
+                                        {
+                                            "id": "rain",
+                                            "language": "en",
+                                            "text": "rain"
+                                        },
+                                        {
+                                            "id": "shower",
+                                            "language": "en",
+                                            "text": "shower"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "he directed a torrent of abuse at me"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0014996.003",
+                                    "synonyms": [
+                                        {
+                                            "id": "outburst",
+                                            "language": "en",
+                                            "text": "outburst"
+                                        },
+                                        {
+                                            "id": "stream",
+                                            "language": "en",
+                                            "text": "stream"
+                                        },
+                                        {
+                                            "id": "volley",
+                                            "language": "en",
+                                            "text": "volley"
+                                        },
+                                        {
+                                            "id": "outpouring",
+                                            "language": "en",
+                                            "text": "outpouring"
+                                        },
+                                        {
+                                            "id": "hail",
+                                            "language": "en",
+                                            "text": "hail"
+                                        },
+                                        {
+                                            "id": "onslaught",
+                                            "language": "en",
+                                            "text": "onslaught"
+                                        },
+                                        {
+                                            "id": "avalanche",
+                                            "language": "en",
+                                            "text": "avalanche"
+                                        },
+                                        {
+                                            "id": "flow",
+                                            "language": "en",
+                                            "text": "flow"
+                                        },
+                                        {
+                                            "id": "barrage",
+                                            "language": "en",
+                                            "text": "barrage"
+                                        },
+                                        {
+                                            "id": "battery",
+                                            "language": "en",
+                                            "text": "battery"
+                                        },
+                                        {
+                                            "id": "tide",
+                                            "language": "en",
+                                            "text": "tide"
+                                        },
+                                        {
+                                            "id": "spate",
+                                            "language": "en",
+                                            "text": "spate"
+                                        },
+                                        {
+                                            "id": "effusion",
+                                            "language": "en",
+                                            "text": "effusion"
+                                        },
+                                        {
+                                            "id": "inundation",
+                                            "language": "en",
+                                            "text": "inundation"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en",
+                    "lexicalCategory": "Noun",
+                    "text": "torrent"
+                }
+            ],
+            "type": "headword",
+            "word": "torrent"
+        }
+    ]
+}

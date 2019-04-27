@@ -1,5 +1,6 @@
 import json
 import logging
+import random
 import requests
 from forest_backend.logic.json_helper import JsonHelper
 from forest_backend.logic.external_api_configs.oxford_dictionary import config
@@ -38,17 +39,25 @@ class Growth(object):
 
     # first level level 0 to level 1
     def sprout(self):
-        #TODO: fetch all new trees and turn into sprouts
-        get_seeds_url = self.forest_url + "seeds"
-        data = {"tree_level": 0}
-        new_seeds = requests.get(get_seeds_url, data=json.dumps(data), headers=self.forest_headers)
-        synonym_url = self.url + "excellent" + "/synonyms"
+        get_trees_url = self.forest_url + "trees"
+        new_trees = requests.get(get_trees_url, data=json.dumps({"tree_level": 0}), headers=self.forest_headers).json()
 
-        response = requests.get(synonym_url, headers=self.headers)
-        json_data = json.loads(response.text)
-        synonyms = self.json_helper.get_synonyms(json_data)
-        print(synonyms)
-        return synonyms
+        for tree in new_trees['data']:
+            synonym_url = self.url + tree['seed']['word'] + "/synonyms"
+
+            json_data = requests.get(synonym_url, headers=self.headers).json()
+            synonyms = self.json_helper.get_synonyms(json_data)
+
+            chosen_synonyms = random.sample(synonyms, 3)
+            for synonym in chosen_synonyms:
+                put_branch_url = self.forest_url + "branch"
+                # TODO: create branches for tree,  increase tree_level
+                new_branch = requests.get(put_branch_url, data=json.dumps({"tree_level": 0}), headers=self.forest_headers).json()
+
+
+            print(synonyms)
+
+        return True
 
     #  :level 1 to level 2
     def seedling(self):

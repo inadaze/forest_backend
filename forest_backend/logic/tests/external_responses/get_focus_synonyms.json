@@ -1,0 +1,405 @@
+{
+    "metadata": {
+        "provider": "Oxford University Press"
+    },
+    "results": [
+        {
+            "id": "focus",
+            "language": "en",
+            "lexicalEntries": [
+                {
+                    "entries": [
+                        {
+                            "homographNumber": "000",
+                            "senses": [
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "schools are a focus of community life"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0005850.001",
+                                    "synonyms": [
+                                        {
+                                            "id": "centre",
+                                            "language": "en",
+                                            "text": "centre"
+                                        },
+                                        {
+                                            "id": "focal_point",
+                                            "language": "en",
+                                            "text": "focal point"
+                                        },
+                                        {
+                                            "id": "central_point",
+                                            "language": "en",
+                                            "text": "central point"
+                                        },
+                                        {
+                                            "id": "centre_of_attention",
+                                            "language": "en",
+                                            "text": "centre of attention"
+                                        },
+                                        {
+                                            "id": "hub",
+                                            "language": "en",
+                                            "text": "hub"
+                                        },
+                                        {
+                                            "id": "pivot",
+                                            "language": "en",
+                                            "text": "pivot"
+                                        },
+                                        {
+                                            "id": "nucleus",
+                                            "language": "en",
+                                            "text": "nucleus"
+                                        },
+                                        {
+                                            "id": "heart",
+                                            "language": "en",
+                                            "text": "heart"
+                                        },
+                                        {
+                                            "id": "cornerstone",
+                                            "language": "en",
+                                            "text": "cornerstone"
+                                        },
+                                        {
+                                            "id": "linchpin",
+                                            "language": "en",
+                                            "text": "linchpin"
+                                        },
+                                        {
+                                            "id": "kingpin",
+                                            "language": "en",
+                                            "text": "kingpin"
+                                        },
+                                        {
+                                            "id": "bedrock",
+                                            "language": "en",
+                                            "text": "bedrock"
+                                        },
+                                        {
+                                            "id": "basis",
+                                            "language": "en",
+                                            "text": "basis"
+                                        },
+                                        {
+                                            "id": "anchor",
+                                            "language": "en",
+                                            "text": "anchor"
+                                        },
+                                        {
+                                            "id": "backbone",
+                                            "language": "en",
+                                            "text": "backbone"
+                                        },
+                                        {
+                                            "id": "cynosure",
+                                            "language": "en",
+                                            "text": "cynosure"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "the focus of this criticism is on helping people find solutions"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0005850.002",
+                                    "synonyms": [
+                                        {
+                                            "id": "emphasis",
+                                            "language": "en",
+                                            "text": "emphasis"
+                                        },
+                                        {
+                                            "id": "accent",
+                                            "language": "en",
+                                            "text": "accent"
+                                        },
+                                        {
+                                            "id": "priority",
+                                            "language": "en",
+                                            "text": "priority"
+                                        },
+                                        {
+                                            "id": "attention",
+                                            "language": "en",
+                                            "text": "attention"
+                                        },
+                                        {
+                                            "id": "concentration",
+                                            "language": "en",
+                                            "text": "concentration"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "the main focus of this chapter is elected local government"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0005850.003",
+                                    "subsenses": [
+                                        {
+                                            "id": "id44cb8cd4-5c38-445f-b48b-b04952dade10",
+                                            "synonyms": [
+                                                {
+                                                    "id": "substance",
+                                                    "language": "en",
+                                                    "text": "substance"
+                                                },
+                                                {
+                                                    "id": "essence",
+                                                    "language": "en",
+                                                    "text": "essence"
+                                                },
+                                                {
+                                                    "id": "gist",
+                                                    "language": "en",
+                                                    "text": "gist"
+                                                },
+                                                {
+                                                    "id": "matter",
+                                                    "language": "en",
+                                                    "text": "matter"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "synonyms": [
+                                        {
+                                            "id": "subject",
+                                            "language": "en",
+                                            "text": "subject"
+                                        },
+                                        {
+                                            "id": "theme",
+                                            "language": "en",
+                                            "text": "theme"
+                                        },
+                                        {
+                                            "id": "concern",
+                                            "language": "en",
+                                            "text": "concern"
+                                        },
+                                        {
+                                            "id": "subject_matter",
+                                            "language": "en",
+                                            "text": "subject matter"
+                                        },
+                                        {
+                                            "id": "topic",
+                                            "language": "en",
+                                            "text": "topic"
+                                        },
+                                        {
+                                            "id": "issue",
+                                            "language": "en",
+                                            "text": "issue"
+                                        },
+                                        {
+                                            "id": "question",
+                                            "language": "en",
+                                            "text": "question"
+                                        },
+                                        {
+                                            "id": "text",
+                                            "language": "en",
+                                            "text": "text"
+                                        },
+                                        {
+                                            "id": "thesis",
+                                            "language": "en",
+                                            "text": "thesis"
+                                        },
+                                        {
+                                            "id": "content",
+                                            "language": "en",
+                                            "text": "content"
+                                        },
+                                        {
+                                            "id": "point",
+                                            "language": "en",
+                                            "text": "point"
+                                        },
+                                        {
+                                            "id": "motif",
+                                            "language": "en",
+                                            "text": "motif"
+                                        },
+                                        {
+                                            "id": "thread",
+                                            "language": "en",
+                                            "text": "thread"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "the resulting light beams are brought to a focus at the eyepiece"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0005850.004",
+                                    "synonyms": [
+                                        {
+                                            "id": "focal_point",
+                                            "language": "en",
+                                            "text": "focal point"
+                                        },
+                                        {
+                                            "id": "point_of_convergence",
+                                            "language": "en",
+                                            "text": "point of convergence"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en",
+                    "lexicalCategory": "Noun",
+                    "text": "focus"
+                },
+                {
+                    "entries": [
+                        {
+                            "homographNumber": "001",
+                            "senses": [
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "he focused his binoculars on the distant tower"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0005850.007",
+                                    "subsenses": [
+                                        {
+                                            "id": "idf20cb401-bb63-4a6a-bf55-2b46fd8b7da4",
+                                            "synonyms": [
+                                                {
+                                                    "id": "aim",
+                                                    "language": "en",
+                                                    "text": "aim"
+                                                },
+                                                {
+                                                    "id": "point",
+                                                    "language": "en",
+                                                    "text": "point"
+                                                },
+                                                {
+                                                    "id": "turn",
+                                                    "language": "en",
+                                                    "text": "turn"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "synonyms": [
+                                        {
+                                            "id": "bring_into_focus",
+                                            "language": "en",
+                                            "text": "bring into focus"
+                                        },
+                                        {
+                                            "id": "bring_to_a_focus",
+                                            "language": "en",
+                                            "text": "bring to a focus"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "examples": [
+                                        {
+                                            "text": "the investigation will focus on areas of social need"
+                                        }
+                                    ],
+                                    "id": "t_en_gb0005850.008",
+                                    "subsenses": [
+                                        {
+                                            "id": "idd29252bc-fbaf-4941-98f3-fd2582fbf4bf",
+                                            "synonyms": [
+                                                {
+                                                    "id": "address_itself_to",
+                                                    "language": "en",
+                                                    "text": "address itself to"
+                                                },
+                                                {
+                                                    "id": "pay_attention_to",
+                                                    "language": "en",
+                                                    "text": "pay attention to"
+                                                },
+                                                {
+                                                    "id": "pinpoint",
+                                                    "language": "en",
+                                                    "text": "pinpoint"
+                                                },
+                                                {
+                                                    "id": "spotlight",
+                                                    "language": "en",
+                                                    "text": "spotlight"
+                                                },
+                                                {
+                                                    "id": "revolve_around",
+                                                    "language": "en",
+                                                    "text": "revolve around"
+                                                },
+                                                {
+                                                    "id": "have_as_its_starting_point",
+                                                    "language": "en",
+                                                    "text": "have as its starting point"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "synonyms": [
+                                        {
+                                            "id": "concentrate",
+                                            "language": "en",
+                                            "text": "concentrate"
+                                        },
+                                        {
+                                            "id": "fix",
+                                            "language": "en",
+                                            "text": "fix"
+                                        },
+                                        {
+                                            "id": "centre",
+                                            "language": "en",
+                                            "text": "centre"
+                                        },
+                                        {
+                                            "id": "pivot",
+                                            "language": "en",
+                                            "text": "pivot"
+                                        },
+                                        {
+                                            "id": "zero_in",
+                                            "language": "en",
+                                            "text": "zero in"
+                                        },
+                                        {
+                                            "id": "zoom_in",
+                                            "language": "en",
+                                            "text": "zoom in"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "language": "en",
+                    "lexicalCategory": "Verb",
+                    "text": "focus"
+                }
+            ],
+            "type": "headword",
+            "word": "focus"
+        }
+    ]
+}

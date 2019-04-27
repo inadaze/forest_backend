@@ -1,0 +1,29 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "id": 1,
+            "creation_date": "2019-04-19T14:46:29.141601+00:00",
+            "seed": {
+                "word": "focus",
+                "id": 1,
+                "creation_date": "2019-04-16T20:06:12.901957+00:00"
+            },
+            "level_id": 0,
+            "seed_id": 1,
+            "last_modified_date": "2019-04-19T14:46:29.141601+00:00"
+        },
+        {
+            "id": 2,
+            "creation_date": "2019-04-26T16:44:26.642935+00:00",
+            "seed": {
+                "word": "torus",
+                "id": 2,
+                "creation_date": "2019-04-25T13:11:39.973766+00:00"
+            },
+            "level_id": 0,
+            "seed_id": 2,
+            "last_modified_date": "2019-04-26T16:44:26.642935+00:00"
+        }
+    ]
+}
