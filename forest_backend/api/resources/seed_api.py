@@ -12,8 +12,8 @@ seed_schema = SeedSchema()
 class SeedApi(Resource):
     def get(self, seed_id):
         app.logger.info('Fetching a seed')
-        seed = Seed.query.filter_by(word=seed_id)
-        seed = seeds_schema.dump(seed).data
+        seed = Seed.query.filter_by(word=seed_id).first()
+        seed = seed_schema.dump(seed).data
         return {'status': 'success', 'data': seed}, 200
 
     def put(self, seed_id=''):
@@ -37,16 +37,15 @@ class SeedApi(Resource):
         return {"status": 'failure'}, 400
 
 class SeedsApi(Resource):
-    def get(self):
-        if not request.json:
+    def get(self, level=''):
+        if level == 'all':
             app.logger.info('Fetching all seeds')
             seeds = Seed.query.all()
             seeds = seeds_schema.dump(seeds).data
             return {'status': 'success', 'data': seeds}, 200
         #TODO: can I do this without adding the json body?  like just an extra path param or something?
-        if 'tree_level' in request.json and type(request.json['tree_level']) == int:
+        if level == 'new':
             app.logger.info('Fetching all new seeds')
-            tree_level = request.json.get('tree_level')
 
             #Get all seeds that don't have a tree
             new_seeds = db.session.query(Seed).filter(

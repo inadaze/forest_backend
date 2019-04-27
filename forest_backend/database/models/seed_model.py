@@ -17,6 +17,6 @@ class Seed(db.Model):
         self.word = word
 
 class SeedSchema(ma.Schema):
-    id = fields.String(required=True, dump_only=True)
+    id = fields.Integer(required=True, dump_only=True)
     word = fields.String(required=True, validate=validate.Length(1))
     creation_date = fields.DateTime()

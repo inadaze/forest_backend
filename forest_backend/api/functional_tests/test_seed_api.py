@@ -9,12 +9,12 @@ import pytest
 
 headers = {'content-type': 'application/json'}
 
-def test_get_seed_returns_a_seed(get_client):
+def test_get_seed_returns_the_seed_requested(get_client):
     client, app = get_client
-    seeds_response = client.get('api/seeds')
-    seeds = json.loads(seeds_response.get_data())
+    seed_response = client.get('api/seed/floral')
+    seed = json.loads(seed_response.get_data())
 
-    assert seeds['data'][0]['word'] == "floral"
+    assert seed['data']['id'] == 1
 
 def test_put_seed_with_list_args_can_add_a_seed(get_client):
     client, app = get_client
@@ -43,4 +43,22 @@ def test_put_seed_returns_error_when_no_seed_specified(get_client):
     data = {"word": ""}
     seeds_response = client.put('api/seed/', data=json.dumps(data), headers=headers)
     assert seeds_response.status_code == 400
-    
+
+
+def test_get_seeds_returns_new_seeds(get_client):
+    client, app = get_client
+    seeds_response = client.get('api/seeds/new',headers=headers)
+    seeds = json.loads(seeds_response.get_data())
+
+    assert seeds['data'][0]['word'] == 'temptation'
+    assert seeds_response.status_code == 200
+
+def test_get_seeds_returns_all_seeds(get_client):
+    client, app = get_client
+    seeds_response = client.get('api/seeds/all',headers=headers)
+    seeds = json.loads(seeds_response.get_data())
+
+    assert seeds['data'][0]['word'] == 'floral'
+    assert seeds['data'][1]['word'] == 'minimal'
+    assert seeds['data'][2]['word'] == 'temptation'
+    assert seeds_response.status_code == 200
