@@ -4,16 +4,20 @@ from forest_backend.database.models.seed_model import Seed, SeedSchema
 from forest_backend.database.models.tree_model import Tree
 from forest_backend.database.sql_db import db
 
+from flask import current_app as app
+
 seeds_schema = SeedSchema(many=True)
 seed_schema = SeedSchema()
 
 class SeedApi(Resource):
     def get(self, seed_id):
+        app.logger.info('Fetching a seed')
         seed = Seed.query.filter_by(word=seed_id)
         seed = seeds_schema.dump(seed).data
         return {'status': 'success', 'data': seed}, 200
 
     def put(self, seed_id=''):
+        app.logger.info('Adding a new seed')
         if not request.get_json():
             seed = Seed(
                 word=seed_id
@@ -35,11 +39,13 @@ class SeedApi(Resource):
 class SeedsApi(Resource):
     def get(self):
         if not request.json:
+            app.logger.info('Fetching all seeds')
             seeds = Seed.query.all()
             seeds = seeds_schema.dump(seeds).data
             return {'status': 'success', 'data': seeds}, 200
         #TODO: can I do this without adding the json body?  like just an extra path param or something?
         if 'tree_level' in request.json and type(request.json['tree_level']) == int:
+            app.logger.info('Fetching all new seeds')
             tree_level = request.json.get('tree_level')
 
             #Get all seeds that don't have a tree

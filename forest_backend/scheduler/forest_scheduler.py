@@ -1,14 +1,14 @@
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 from apscheduler.schedulers.background import BackgroundScheduler
 from forest_backend.logic.growth import Growth
-import logging.config
+import logging
 import time
 
 class ForestScheduler():
     scheduler = None
 
     def __init__(self):
-        #self.create_logger()
+        self.create_logger()
         executors = {
             'default': ThreadPoolExecutor(1),
             'processpool': ProcessPoolExecutor(5)
@@ -16,7 +16,7 @@ class ForestScheduler():
 
         self.scheduler = BackgroundScheduler(executors=executors)
         growth = Growth()
-        self.scheduler.add_job(func=growth.germinate, trigger="interval", seconds=5)
+        self.scheduler.add_job(func=growth.germinate, trigger="interval", minutes=2)
         #self.scheduler.start()
 
     def create_logger(self):
@@ -37,9 +37,12 @@ class ForestScheduler():
         logger.addHandler(fh)
         logger.addHandler(ch)
 
+    def start_scheduler(self):
+        self.scheduler.start()
+
 if __name__ == '__main__':
-    forestScheduler = ForestScheduler()
-    forestScheduler.scheduler.start()
+    FOREST_SCHEDULER = ForestScheduler()
+    FOREST_SCHEDULER.start_scheduler()
 
     try:
         # This is here to simulate application activity (which keeps the main thread alive).
@@ -47,4 +50,4 @@ if __name__ == '__main__':
             time.sleep(2)
     except (KeyboardInterrupt, SystemExit):
         # Not strictly necessary if daemonic mode is enabled but should be done if possible
-        forestScheduler.scheduler.shutdown()
+        FOREST_SCHEDULER.scheduler.shutdown()

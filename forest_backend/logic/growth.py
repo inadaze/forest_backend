@@ -15,6 +15,7 @@ class Growth(object):
     json_helper = None
 
     def __init__(self):
+        logger.info('Starting Growth')
         self.url = config['url']
         self.forest_url = forest_config['url']
         self.forest_headers = forest_config['headers']
@@ -23,15 +24,16 @@ class Growth(object):
 
     # grow a seed into a new tree
     def germinate(self):
-        print("germ")
+        logger.info('Running Germinate')
         get_seeds_url = self.forest_url + "seeds"
         new_seeds = requests.get(get_seeds_url, data=json.dumps({"tree_level": 0}), headers=self.forest_headers).json()
+        logger.info('Found %s new seeds', len(new_seeds['data']))
 
         for seed in new_seeds['data']:
             put_tree_url = self.forest_url + "tree/" + seed['word']
             status = requests.put(put_tree_url, headers=self.forest_headers).status_code
             if status != 204:
-                logger.debug('Seed with the word %s did not germinate into a tree', seed['word'])
+                logger.warning('Seed with the word %s did not germinate into a tree', seed['word'])
         return True
 
     # first level level 0 to level 1

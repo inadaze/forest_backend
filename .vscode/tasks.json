@@ -17,7 +17,7 @@
             "command": "pg_ctl",
             "args": [
                 "-D", "/usr/local/var/postgres",
-                "-l", "logfile",
+                "-l", "db.log",
                 "restart"
             ]
         },

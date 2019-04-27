@@ -5,16 +5,20 @@ from forest_backend.database.models.seed_model import Seed
 from forest_backend.database.models.branch_model import Branch, BranchSchema
 from forest_backend.database.sql_db import db
 
+from flask import current_app as app
+
 trees_schema = TreeSchema(many=True)
 tree_schema = TreeSchema()
 
 class TreeApi(Resource):
     def get(self, seed_word):
+        app.logger.info('Fetching a Tree')
         tree = db.session.query(Tree).join(Seed).filter(Tree.seed_id==Seed.id).filter(Seed.word==seed_word).first()
         tree = tree_schema.dump(tree).data
         return {'status': 'success', 'data': tree}, 200
 
     def put(self, seed_word):
+        app.logger.info('Creating a new Tree')
         seed = db.session.query(Seed).filter(
             ~Seed.id.in_(
                 db.session.query(Tree.seed_id).join(Seed).filter(Seed.id==Tree.seed_id)
@@ -31,6 +35,7 @@ class TreeApi(Resource):
 
 class TreesApi(Resource):
     def get(self):
+        app.logger.info('Fetching all seeds')
         if not request.get_json():
             trees = Tree.query.all()
             trees = trees_schema.dump(trees).data
