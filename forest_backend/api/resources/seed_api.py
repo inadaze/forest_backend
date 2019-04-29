@@ -10,21 +10,25 @@ seeds_schema = SeedSchema(many=True)
 seed_schema = SeedSchema()
 
 class SeedApi(Resource):
-    def get(self, seed_id):
+    def get(self):
         app.logger.info('Fetching a seed')
-        seed = Seed.query.filter_by(word=seed_id).first()
-        seed = seed_schema.dump(seed).data
-        return {'status': 'success', 'data': seed}, 200
+        if not request.get_json():
+            return {"status": 'failure'}, 400
+        json_data = request.get_json()
+        if 'id' in request.get_json() and json_data['id'] != '':
+            seed = Seed.query.filter(Seed.id==json_data['id']).first()
+            seed = seed_schema.dump(seed).data
+            return {'status': 'success', 'data': seed}, 200
+        if 'word' in request.get_json() and json_data['word'] != '':
+            seeds = Seed.query.filter(Seed.word==json_data['word']).all()
+            seeds = seeds_schema.dump(seeds).data
+            return {'status': 'success', 'data': seeds}, 200
+        return {"status": 'failure'}, 400
 
-    def put(self, seed_id=''):
+    def put(self):
         app.logger.info('Adding a new seed')
         if not request.get_json():
-            seed = Seed(
-                word=seed_id
-            )
-            db.session.add(seed)
-            db.session.commit()
-            return {"status": 'success'}, 204
+            return {"status": 'failure'}, 400
         if 'word' in request.get_json() and request.get_json()['word'] != '':
             seed = request.get_json()
             seed = Seed(

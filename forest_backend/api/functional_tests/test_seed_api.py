@@ -8,26 +8,15 @@ headers = {'content-type': 'application/json'}
 
 def test_get_seed_returns_the_seed_requested(get_client):
     client, app = get_client
-    seed_response = client.get('api/seed/floral')
+    seed_response = client.get('api/seed', data=json.dumps({'word': 'floral'}), headers=headers)
     seed = json.loads(seed_response.get_data())
 
-    assert seed['data']['id'] == 1
-
-def test_put_seed_with_list_args_can_add_a_seed(get_client):
-    client, app = get_client
-
-    seeds_response = client.put('api/seed/mexico', data=json.dumps(None), headers=headers)
-    assert seeds_response.status_code == 204
-    
-    with app.app.app_context():
-        db_seeds = db.session.query(Seed).all()
-
-    assert list(filter(lambda seed: seed.word == 'mexico', db_seeds))
+    assert seed['data'][0]['id'] == 1
 
 def test_put_seed_with_payload_can_add_a_seed(get_client):
     client, app = get_client
     data = {"word": "tent"}
-    seeds_response = client.put('api/seed/', data=json.dumps(data), headers=headers)
+    seeds_response = client.put('api/seed', data=json.dumps(data), headers=headers)
     assert seeds_response.status_code == 204
     
     with app.app.app_context():
@@ -38,7 +27,7 @@ def test_put_seed_with_payload_can_add_a_seed(get_client):
 def test_put_seed_returns_error_when_no_seed_specified(get_client):
     client, app = get_client
     data = {"word": ""}
-    seeds_response = client.put('api/seed/', data=json.dumps(data), headers=headers)
+    seeds_response = client.put('api/seed', data=json.dumps(data), headers=headers)
     assert seeds_response.status_code == 400
 
 
