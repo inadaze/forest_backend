@@ -83,6 +83,7 @@ class Growth(object):
                     if update_tree.status_code != 200:
                         LOGGER.error('Was not able to update tree with id %s to a sprout', tree['id'])
             else:
+                #TODO: implement an error table for trees with errors so we can avoid searching them again
                 LOGGER.error('Could not get a synonym for the word %s for tree %s', tree['seed']['word'], tree['id'])
 
         return True
