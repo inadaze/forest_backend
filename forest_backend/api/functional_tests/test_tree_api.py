@@ -53,3 +53,14 @@ def test_put_tree_returns_error_if_seed_does_not_exist(get_client):
     tree_response = client.put('api/tree/'+'temptations')
     assert tree_response.status_code == 404
 
+def test_patch_tree_updates_tree_level(get_client):
+    client, app = get_client
+    tree_response = client.patch('api/tree', data=json.dumps({'id': 1, 'level_id':1}), headers=headers)
+    assert tree_response.status_code == 200
+
+    with app.app.app_context():
+        db_tree = db.session.query(Tree).filter(Tree.id==1).first()
+        assert db_tree.level_id == 1
+
+
+

@@ -10,13 +10,14 @@ class ForestScheduler():
     def __init__(self):
         self.create_logger()
         executors = {
-            'default': ThreadPoolExecutor(1),
+            'default': ThreadPoolExecutor(2),
             'processpool': ProcessPoolExecutor(5)
         }
 
         self.scheduler = BackgroundScheduler(executors=executors)
         growth = Growth()
         self.scheduler.add_job(func=growth.germinate, trigger="interval", minutes=2)
+        self.scheduler.add_job(func=growth.sprout, trigger="interval", minutes=2)
         #self.scheduler.start()
 
     def create_logger(self):

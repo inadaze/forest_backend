@@ -8,7 +8,17 @@ headers = {'content-type': 'application/json'}
 
 def test_put_branch_create_new_branch(get_client):
     client, app = get_client
-    branch_response = client.get('api/branch/floral')
-    branch = json.loads(branch_response.get_data())
+    branch_response = client.put('api/branch', data=json.dumps({'tree_id':1, 'idea': "word"}), headers=headers)
+    assert branch_response.status_code == 204
 
+    with app.app.app_context():
+        db_branch = db.session.query(Branch).filter(Branch.tree_id==1).first()
+        assert db_branch.id == 1
+
+
+def test_get_branch_returns_requested_branch(get_client):
+    client, app = get_client
+    branch_response = client.get('api/branch', data=json.dumps({'tree_id': 1, 'idea': "kitten"}), headers=headers)
+    assert branch_response.status_code == 200
+    branch = json.loads(branch_response.get_data())
     assert branch['data']['id'] == 1

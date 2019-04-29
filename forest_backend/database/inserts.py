@@ -3,6 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from forest_backend.database.models.tree_level_model import TreeLevel
 from forest_backend.database.models.seed_model import Seed
 from forest_backend.database.models.tree_model import Tree
+from forest_backend.database.models.branch_model import Branch
 
 # engine = create_engine("postgresql://jasons:password@localhost/forest")
 # Session = sessionmaker(bind=engine)
@@ -51,4 +52,8 @@ def populate_test_data(db):
     db.session.commit()
 
     # Create Branches
-    # TODO: need to create branches and attach to some trees
+    branch1 = Branch('kitten', 1)
+    branch2 = Branch('molten', 2)
+    db.session.add(branch1)
+    db.session.add(branch2)
+    db.session.commit()

@@ -46,3 +46,15 @@ class TreesApi(Resource):
             trees = db.session.query(Tree).join(Seed).filter(Tree.seed_id==Seed.id).filter(Tree.level_id==tree_level).all()
             trees = trees_schema.dump(trees).data
             return {'status': 'success', 'data': trees}, 200
+
+class TreeUpdateApi(Resource):
+    def patch(self):
+        app.logger.info('Updating tree')
+        if not request.get_json():
+            return {'status': 'failure'}, 404
+        tree_req = request.get_json()
+        tree = db.session.query(Tree).filter(Tree.id==tree_req['id']).first()
+        tree.level_id = tree_req['level_id']
+        db.session.merge(tree)
+        db.session.commit()
+        return {'status': 'success'}, 200
