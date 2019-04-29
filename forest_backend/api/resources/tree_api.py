@@ -1,30 +1,30 @@
+""" A Flask-restful Resource file for the Tree API """
 from flask_restful import Resource
 from flask import request
+from flask import current_app as app
 from forest_backend.database.models.tree_model import Tree, TreeSchema
 from forest_backend.database.models.seed_model import Seed
-from forest_backend.database.models.branch_model import Branch, BranchSchema
 from forest_backend.database.sql_db import db
 
-from flask import current_app as app
-
-trees_schema = TreeSchema(many=True)
-tree_schema = TreeSchema()
+TREES_SCHEMA = TreeSchema(many=True)
+TREE_SCHEMA = TreeSchema()
 
 class TreeApi(Resource):
     def get(self, seed_word):
         app.logger.info('Fetching a Tree')
-        tree = db.session.query(Tree).join(Seed).filter(Tree.seed_id==Seed.id).filter(Seed.word==seed_word).first()
-        tree = tree_schema.dump(tree).data
+        tree = Tree.query.join(Seed).filter(Tree.seed_id == Seed.id).filter(Seed.word == seed_word).first()
+        tree = TREE_SCHEMA.dump(tree).data
         return {'status': 'success', 'data': tree}, 200
 
     def put(self, seed_word):
         app.logger.info('Creating a new Tree')
+        # pylint: disable=E1101
         seed = db.session.query(Seed).filter(
             ~Seed.id.in_(
-                db.session.query(Tree.seed_id).join(Seed).filter(Seed.id==Tree.seed_id)
+                db.session.query(Tree.seed_id).join(Seed).filter(Seed.id == Tree.seed_id)
             )
         ).filter(
-                Seed.word==seed_word
+                Seed.word == seed_word
             ).first()
         if not seed:
             return {"status": 'not found'}, 404
@@ -38,13 +38,14 @@ class TreesApi(Resource):
         if not request.get_json():
             app.logger.info('Fetching all trees')
             trees = Tree.query.all()
-            trees = trees_schema.dump(trees).data
+            trees = TREES_SCHEMA.dump(trees).data
             return {'status': 'success', 'data': trees}, 200
         if 'level_id' in request.get_json():
             tree_level = request.get_json()['level_id']
             app.logger.info('Fetching all level %s trees', tree_level)
-            trees = db.session.query(Tree).join(Seed).filter(Tree.seed_id==Seed.id).filter(Tree.level_id==tree_level).all()
-            trees = trees_schema.dump(trees).data
+            # pylint: disable=E1101
+            trees = db.session.query(Tree).join(Seed).filter(Tree.seed_id == Seed.id).filter(Tree.level_id == tree_level).all()
+            trees = TREES_SCHEMA.dump(trees).data
             return {'status': 'success', 'data': trees}, 200
 
 class TreeUpdateApi(Resource):
@@ -53,7 +54,8 @@ class TreeUpdateApi(Resource):
         if not request.get_json():
             return {'status': 'failure'}, 404
         tree_req = request.get_json()
-        tree = db.session.query(Tree).filter(Tree.id==tree_req['id']).first()
+        # pylint: disable=E1101
+        tree = db.session.query(Tree).filter(Tree.id == tree_req['id']).first()
         tree.level_id = tree_req['level_id']
         db.session.merge(tree)
         db.session.commit()

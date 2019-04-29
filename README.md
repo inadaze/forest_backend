@@ -33,6 +33,8 @@ execute from inside github/forest_backend repo folder
 python migrate.py db migrate
 python migrate.py db upgrade
 
+## Documentation
+http://localhost:5000/apidocs/index.html 
 
 # Tutorial
 https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx
@@ -45,3 +47,4 @@ select idea from branches inner join trees on branches.id=trees.branch_id where 
 
 ## Seeds not yet a tree
 select id from seeds where id not in (select seeds.id from seeds inner join trees on trees.seed_id=seeds.id);
+
