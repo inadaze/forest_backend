@@ -1,9 +1,10 @@
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 from apscheduler.schedulers.background import BackgroundScheduler
-from ..logic.growth import Growth
+from forest_backend.logic.growth import Growth
 import logging
 import time
 
+# NOTE: because this is executed as a script all imports must be from forest_backend
 class ForestScheduler():
     scheduler = None
 
