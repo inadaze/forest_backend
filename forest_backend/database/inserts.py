@@ -1,5 +1,6 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+""" Module to insert some default data in database as well as some test data """
+# from sqlalchemy import create_engine
+# from sqlalchemy.orm import sessionmaker
 from .models.tree_level_model import TreeLevel
 from .models.seed_model import Seed
 from .models.tree_model import Tree
@@ -9,7 +10,9 @@ from .models.branch_model import Branch
 # Session = sessionmaker(bind=engine)
 # session = Session()
 
+# pylint: disable=C0103
 def populate(db):
+    """ Default data for database """
     # Default values for TreeLevel
     seed = TreeLevel(0, "seed")
     sprout = TreeLevel(1, "sprout")
@@ -32,6 +35,7 @@ def populate(db):
     db.session.close()
 
 def populate_test_data(db):
+    """ Test data for test database """
     # Create Seeds
     seed1 = Seed(word="floral")
     seed2 = Seed(word="minimal")

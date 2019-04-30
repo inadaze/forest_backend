@@ -75,7 +75,7 @@ class SeedApi(Resource):
         return {"status": 'failure'}, 400
 
 class SeedsApi(Resource):
-    """ Class for Seed api endpoint /seed """
+    """ Class for Seeds api endpoint /seeds """
     def get(self, level=''):
         """
         Definition for GET /seeds
