@@ -22,7 +22,7 @@ def get_torrent_synonyms_response():
     return get_mock_response('external_responses/get_torrent_synonyms.json')
 
 def get_mock_response(path):
-    with open('forest_backend/logic/tests/' + path, 'r') as myfile:
+    with open('test_forest_backend/test_logic/' + path, 'r') as myfile:
         return myfile.read()
 
 # @pytest.fixture(autouse=True)

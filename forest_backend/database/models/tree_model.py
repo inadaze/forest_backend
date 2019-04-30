@@ -2,10 +2,10 @@ from marshmallow import fields, validate
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import Sequence
-from forest_backend.database.sql_db import db, ma
-from forest_backend.database.models.seed_model import SeedSchema
-from forest_backend.database.models.tree_level_model import TreeLevelSchema
-from forest_backend.database.models.branch_model import BranchSchema
+from ..sql_db import db, ma
+from .seed_model import SeedSchema
+from .tree_level_model import TreeLevelSchema
+from .branch_model import BranchSchema
 
 
 class Tree(db.Model):

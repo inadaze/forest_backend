@@ -1,9 +1,9 @@
 """ A Flask-restful Resource file for the Branch API """
 from flask_restful import Resource
 from flask import request
-from forest_backend.database.models.branch_model import Branch, BranchSchema
-from forest_backend.database.models.tree_model import Tree
-from forest_backend.database.sql_db import db
+from ...database.models.branch_model import Branch, BranchSchema
+from ...database.models.tree_model import Tree
+from ...database.sql_db import db
 
 BRANCHES_SCHEMA = BranchSchema(many=True)
 BRANCH_SCHEMA = BranchSchema()

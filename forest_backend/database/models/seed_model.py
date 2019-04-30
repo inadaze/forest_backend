@@ -2,7 +2,7 @@ from marshmallow import fields, validate
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import Sequence
-from forest_backend.database.sql_db import db, ma
+from ..sql_db import db, ma
 
 
 class Seed(db.Model):

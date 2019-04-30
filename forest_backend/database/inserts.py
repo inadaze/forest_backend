@@ -1,9 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from forest_backend.database.models.tree_level_model import TreeLevel
-from forest_backend.database.models.seed_model import Seed
-from forest_backend.database.models.tree_model import Tree
-from forest_backend.database.models.branch_model import Branch
+from .models.tree_level_model import TreeLevel
+from .models.seed_model import Seed
+from .models.tree_model import Tree
+from .models.branch_model import Branch
 
 # engine = create_engine("postgresql://jasons:password@localhost/forest")
 # Session = sessionmaker(bind=engine)

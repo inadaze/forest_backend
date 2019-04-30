@@ -2,9 +2,9 @@
 from flask_restful import Resource
 from flask import request
 from flask import current_app as app
-from forest_backend.database.models.seed_model import Seed, SeedSchema
-from forest_backend.database.models.tree_model import Tree
-from forest_backend.database.sql_db import db
+from ...database.models.seed_model import Seed, SeedSchema
+from ...database.models.tree_model import Tree
+from ...database.sql_db import db
 
 SEEDS_SCHEMA = SeedSchema(many=True)
 SEED_SCHEMA = SeedSchema()

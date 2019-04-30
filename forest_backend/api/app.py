@@ -5,10 +5,10 @@ import logging
 from flasgger import Swagger
 from flask import Flask, Blueprint
 from flask_restful import Api
-from forest_backend.api.resources.seed_api import SeedApi, SeedsApi
-from forest_backend.api.resources.branch_api import BranchApi
-from forest_backend.api.resources.tree_api import TreeApi, TreesApi, TreeUpdateApi
-from forest_backend.database.sql_db import db
+from .resources.seed_api import SeedApi, SeedsApi
+from .resources.branch_api import BranchApi
+from .resources.tree_api import TreeApi, TreesApi, TreeUpdateApi
+from ..database.sql_db import db
 #from forest_backend.scheduler.forest_scheduler import ForestScheduler
 
 

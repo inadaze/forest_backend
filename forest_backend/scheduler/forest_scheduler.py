@@ -1,6 +1,6 @@
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 from apscheduler.schedulers.background import BackgroundScheduler
-from forest_backend.logic.growth import Growth
+from ..logic.growth import Growth
 import logging
 import time
 

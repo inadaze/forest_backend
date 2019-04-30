@@ -2,14 +2,32 @@ import json
 import logging
 import random
 import requests
-from forest_backend.logic.json_helper import JsonHelper
-from forest_backend.logic.external_api_configs.oxford_dictionary import config
-from forest_backend.logic.internal_api_configs.forest_backend import config as forest_config
+from .json_helper import JsonHelper
+from .external_api_configs.oxford_dictionary import config
+from .internal_api_configs.forest_backend import config as forest_config
 
 
 LOGGER = logging.getLogger('forest_backend_scheduler')
 
 class Growth(object):
+    """
+    Summary line.
+
+    Extended description of function.
+
+    Parameters
+    ----------
+    arg1 : int
+        Description of arg1
+    arg2 : str
+        Description of arg2
+
+    Returns
+    -------
+    int
+        Description of return value
+
+    """
     url = None
     forest_url = None
     headers = {'app_id': '53e47906', "app_key": "d469e72695b750d658d9289f7f580bfd"}

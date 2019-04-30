@@ -1,8 +1,8 @@
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from forest_backend.api.app import app
-from forest_backend.database.sql_db import db
-from forest_backend.database.inserts import populate
+from ..api.app import app
+from .sql_db import db
+from .inserts import populate
 import os
 
 MIGRATION_DIR = os.path.join('forest_backend', 'database', 'migrations')

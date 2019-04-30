@@ -8,5 +8,8 @@
     "python.linting.pylintPath": "forest_backend_env/bin/pylint",
     "todo-tree.excludedWorkspaces": [
         "forest_backend_env/"
+    ],
+    "python.testing.pyTestArgs": [
+        "test_forest_backend"
     ]
 }
