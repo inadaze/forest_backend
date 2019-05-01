@@ -37,9 +37,9 @@ def populate(db):
 def populate_test_data(db):
     """ Test data for test database """
     # Create Seeds
-    seed1 = Seed(word="floral")
-    seed2 = Seed(word="minimal")
-    seed3 = Seed(word="temptation")
+    seed1 = Seed("floral", "1,2,3")
+    seed2 = Seed("minimal", '4,5,6')
+    seed3 = Seed("temptation", '1,0,2')
     db.session.add(seed1)
     db.session.add(seed2)
     db.session.add(seed3)

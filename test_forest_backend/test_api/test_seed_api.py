@@ -15,14 +15,18 @@ def test_get_seed_returns_the_seed_requested(get_client):
 
 def test_put_seed_with_payload_can_add_a_seed(get_client):
     client, app = get_client
-    data = {"word": "tent"}
+    data = {
+        "word": "tent",
+        "location": "1,2,3"
+        }
     seeds_response = client.put('api/seed', data=json.dumps(data), headers=headers)
     assert seeds_response.status_code == 204
     
     with app.app.app_context():
         db_seeds = db.session.query(Seed).all()
 
-    assert list(filter(lambda seed: seed.word == 'tent', db_seeds))
+    seed = list(filter(lambda seed: seed.word == 'tent', db_seeds))
+    assert seed[0].location == '1,2,3'
 
 def test_put_seed_returns_error_when_no_seed_specified(get_client):
     client, app = get_client

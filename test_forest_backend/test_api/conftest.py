@@ -5,7 +5,6 @@ import pytest
 
 from forest_backend.api import app
 from forest_backend.database.sql_db import db
-from forest_backend.database.models.seed_model import Seed
 from forest_backend.database.inserts import populate, populate_test_data
 
 

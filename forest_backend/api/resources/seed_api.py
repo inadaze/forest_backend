@@ -53,6 +53,10 @@ class SeedApi(Resource):
               type: string
               required: true
               description: the word associated to the branch you want to create
+            - name: location
+              type: string
+              required: true
+              description: string representation of the location vector of the seed
         responses:
             200:
                 description: Seed created successfully
@@ -62,10 +66,12 @@ class SeedApi(Resource):
         app.logger.info('Adding a new seed')
         if not request.get_json():
             return {"status": 'failure'}, 400
-        if 'word' in request.get_json() and request.get_json()['word'] != '':
+        if ('word' in request.get_json() and request.get_json()['word'] != '' and
+                'location' in request.get_json() and request.get_json()['location'] != ''):
             seed = request.get_json()
             seed = Seed(
-                word=seed['word']
+                word=seed['word'],
+                location=seed['location']
             )
             # pylint: disable=E1101
             db.session.add(seed)
