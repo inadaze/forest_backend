@@ -27,6 +27,10 @@ psql postgres
 ## SQLAlchemy
 python migrate.py db init
 
+## Sphinx
+Create docs folder and run sphinx-quickstart
+make html
+
 ### apply migrations
 NOTE: make sure postgress is running first
 execute from inside github/forest_backend repo folder

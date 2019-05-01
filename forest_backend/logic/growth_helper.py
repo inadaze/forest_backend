@@ -1,2 +1,4 @@
-def get_synonyms(word):
-    pass
+""" Helper class to support Growth """
+
+def get_synonyms():
+    """ a funciton """

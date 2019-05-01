@@ -1,3 +1,4 @@
+""" Module to contain the tasks to be run by the Scheduler """
 import json
 import logging
 import random
@@ -11,22 +12,9 @@ LOGGER = logging.getLogger('forest_backend_scheduler')
 
 class Growth(object):
     """
-    Summary line.
+    Actions to grow a tree from seed to snag
 
-    Extended description of function.
-
-    Parameters
-    ----------
-    arg1 : int
-        Description of arg1
-    arg2 : str
-        Description of arg2
-
-    Returns
-    -------
-    int
-        Description of return value
-
+    This is where calls to external and internal apis are made
     """
     url = None
     forest_url = None
@@ -41,8 +29,16 @@ class Growth(object):
         self.json_helper = JsonHelper()
         print('Growth')
 
-    # grow a seed into a new tree
     def germinate(self):
+        """
+        Grow a seed into a tree
+
+        Returns
+        -------
+        bool
+            Returns true if successfully exited
+        """
+
         LOGGER.info('Running Germinate')
         get_seeds_url = self.forest_url + "seeds/" + 'new'
         new_seeds_resp = requests.get(get_seeds_url, headers=self.forest_headers)
@@ -56,8 +52,18 @@ class Growth(object):
                 LOGGER.warning('Seed with the word %s did not germinate into a tree', seed['word'])
         return True
 
-    # first level level 0 to level 1
     def sprout(self):
+        """
+        Grow a new tree into a sprout
+        Updates tree level from 0 to 1
+        Fetches word synonyms
+
+        Returns
+        -------
+        int
+            Description of return value
+
+        """
         get_trees_url = self.forest_url + "trees"
         new_trees_resp = requests.get(
             get_trees_url,
@@ -72,7 +78,7 @@ class Growth(object):
 
             get_synonym_resp = requests.get(synonym_url, headers=self.headers)
             if get_synonym_resp.status_code == 200:
-                
+
                 json_data = get_synonym_resp.json()
                 synonyms = self.json_helper.get_synonyms(json_data)
 
@@ -99,30 +105,82 @@ class Growth(object):
                         headers=self.forest_headers
                         )
                     if update_tree.status_code != 200:
-                        LOGGER.error('Was not able to update tree with id %s to a sprout', tree['id'])
+                        LOGGER.error(
+                            'Was not able to update tree with id %s to a sprout',
+                            tree['id']
+                            )
             else:
+                # pylint: disable=C0301
                 #TODO: implement an error table for trees with errors so we can avoid searching them again
-                LOGGER.error('Could not get a synonym for the word %s for tree %s', tree['seed']['word'], tree['id'])
+                LOGGER.error(
+                    'Could not get a synonym for the word %s for tree %s',
+                    tree['seed']['word'],
+                    tree['id']
+                    )
 
         return True
 
-    #  :level 1 to level 2
     def seedling(self):
-        pass
+        """
+        Grow a new sprout into a seedling
+        Updates tree level from 1 to 2
 
-    #  :level 2 to level 3
+        Returns
+        -------
+        int
+            Description of return value
+
+        """
+        print('Seedling')
+
     def sapling(self):
-        pass
+        """
+        Grow a new seedling into a sapling
+        Updates tree level from 2 to 3
 
-    #  :level 3 to level 4
+        Returns
+        -------
+        int
+            Description of return value
+
+        """
+        print('Sapling')
+
     def mature(self):
-        pass
+        """
+        Grow a new sapling into a mature tree
+        Updates tree level from 3 to 4
 
-    #  :level 4 to level 5
+        Returns
+        -------
+        int
+            Description of return value
+
+        """
+        print('Mature')
+
     def ancient(self):
-        pass
+        """
+        Grow a new mature tree into an ancient tree
+        Updates tree level from 4 to 5
 
-    # last level    :level 5 to level 6
+        Returns
+        -------
+        int
+            Description of return value
+
+        """
+        print('Ancient')
+
     def snag(self):
+        """
+        Grow an ancient tree into a snag
+        Updates tree level from 5 to 6
+
+        Returns
+        -------
+        int
+            Description of return value
+
+        """
         print('Snag')
-    

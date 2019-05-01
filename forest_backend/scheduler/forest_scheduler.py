@@ -1,12 +1,14 @@
+""" Scheduler to setup backend jobs for updating trees """
+import logging
+import time
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 from apscheduler.schedulers.background import BackgroundScheduler
 from forest_backend.logic.growth import Growth
-import logging
-import time
 
 # NOTE: because this is executed as a script all imports must be from forest_backend
 # https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time/14132912#14132912
 class ForestScheduler():
+    """ Creates all necessary jobs to update trees """
     scheduler = None
 
     def __init__(self):
@@ -20,27 +22,26 @@ class ForestScheduler():
         growth = Growth()
         self.scheduler.add_job(func=growth.germinate, trigger="interval", minutes=2)
         self.scheduler.add_job(func=growth.sprout, trigger="interval", minutes=2)
-        #self.scheduler.start()
 
     def create_logger(self):
-        # create logger with 'spam_application'
+        """
+        Creates logger for Scheduler
+        Writes to scheduler.log
+        """
         logger = logging.getLogger('forest_backend_scheduler')
         logger.setLevel(logging.DEBUG)
-        # create file handler which logs even debug messages
-        fh = logging.FileHandler('scheduler.log')
-        fh.setLevel(logging.DEBUG)
-        # create console handler with a higher log level
-        ch = logging.StreamHandler()
-        ch.setLevel(logging.ERROR)
-        # create formatter and add it to the handlers
+        file_handler = logging.FileHandler('scheduler.log')
+        file_handler.setLevel(logging.DEBUG)
+        stream_handler = logging.StreamHandler()
+        stream_handler.setLevel(logging.ERROR)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        fh.setFormatter(formatter)
-        ch.setFormatter(formatter)
-        # add the handlers to the logger
-        logger.addHandler(fh)
-        logger.addHandler(ch)
+        file_handler.setFormatter(formatter)
+        stream_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+        logger.addHandler(stream_handler)
 
     def start_scheduler(self):
+        """ Starts the Scheduler process """
         self.scheduler.start()
 
 if __name__ == '__main__':
