@@ -73,6 +73,7 @@
             "name": "Python: Current File (External Terminal)",
             "type": "python",
             "request": "launch",
+            "cwd": "${workspaceFolder}/database/",
             "program": "${file}",
             "console": "externalTerminal"
         }
