@@ -26,7 +26,7 @@ class Tree(db.Model):
 
     seed = db.relationship('Seed', back_populates='tree', uselist=False, lazy=True)
     tree_level = db.relationship('TreeLevel', back_populates='tree', uselist=False, lazy=True)
-    branch = db.relationship('Branch', back_populates='tree', uselist=False, lazy=True)
+    branch = db.relationship('Branch', back_populates='tree', uselist=True, lazy=True)
 
     def __init__(self, seed_id):
         self.seed_id = seed_id
@@ -38,6 +38,6 @@ class TreeSchema(ma.Schema):
     seed = fields.Nested(SeedSchema())
     level_id = fields.Integer(required=True, dump_only=True)
     level = fields.Nested(TreeLevelSchema())
-    branch = fields.Nested(BranchSchema())
+    branch = fields.Nested(BranchSchema(), many=True)
     creation_date = fields.DateTime()
     last_modified_date = fields.DateTime()

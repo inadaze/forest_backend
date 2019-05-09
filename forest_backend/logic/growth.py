@@ -40,6 +40,7 @@ class Growth(object):
         """
 
         LOGGER.info('Running Germinate')
+        print('Germinate')
         get_seeds_url = self.forest_url + "seeds/" + 'new'
         new_seeds_resp = requests.get(get_seeds_url, headers=self.forest_headers)
         new_seeds = new_seeds_resp.json()
@@ -64,6 +65,8 @@ class Growth(object):
             Description of return value
 
         """
+        LOGGER.info('Running Sprout')
+        print('Sprout')
         get_trees_url = self.forest_url + "trees"
         new_trees_resp = requests.get(
             get_trees_url,

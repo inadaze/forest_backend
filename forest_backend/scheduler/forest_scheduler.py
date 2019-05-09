@@ -20,8 +20,8 @@ class ForestScheduler():
 
         self.scheduler = BackgroundScheduler(executors=executors)
         growth = Growth()
-        self.scheduler.add_job(func=growth.germinate, trigger="interval", minutes=2)
-        self.scheduler.add_job(func=growth.sprout, trigger="interval", minutes=2)
+        self.scheduler.add_job(func=growth.germinate, trigger="interval", seconds=30)
+        self.scheduler.add_job(func=growth.sprout, trigger="interval", seconds=30)
 
     def create_logger(self):
         """

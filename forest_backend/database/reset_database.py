@@ -8,3 +8,4 @@ if __name__ == '__main__':
     SESSION = sessionmaker(bind=ENGINE)
     SESSION = SESSION()
     resetDatabase(ENGINE)
+    # Need to run migrate.py after this?
