@@ -11,6 +11,7 @@ class Branch(db.Model):
     tree_id = db.Column(db.Integer, db.ForeignKey('trees.id'))
     idea = db.Column(db.String(250), nullable=False)
     branch_level = db.Column(db.Integer, primary_key=False, default=1)
+    cut = db.Column(db.Boolean, default=False)
     creation_date = db.Column(
         db.TIMESTAMP,
         server_default=db.func.current_timestamp(),
@@ -35,5 +36,6 @@ class BranchSchema(ma.Schema):
     tree_id = fields.Integer(required=True, dump_only=True)
     idea = fields.String(required=True, dump_only=True)
     branch_level = fields.Integer(required=True, dump_only=True)
+    cut = fields.Boolean(required=True, dump_only=True)
     creation_date = fields.DateTime()
     last_modified_date = fields.DateTime()

@@ -14,6 +14,7 @@ class TreeApi(Resource):
     def get(self, seed_word):
         """
         Definition for GET /tree
+        Returns only branches of the tree that have not been cut
         ---
         paramaters:
             - name: seed_word
@@ -35,6 +36,9 @@ class TreeApi(Resource):
                 Seed.word == seed_word
             ).first()
         tree = TREE_SCHEMA.dump(tree).data
+        for i, branch in enumerate(tree['branch']):
+            if branch['cut'] == True:
+                del tree['branch'][i]
         return {'status': 'success', 'data': tree}, 200
 
     def put(self, seed_word):

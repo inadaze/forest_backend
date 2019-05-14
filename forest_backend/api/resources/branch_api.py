@@ -77,6 +77,36 @@ class BranchApi(Resource):
         db.session.commit()
         return {"status": 'success'}, 204
 
+    def patch(self):
+        """
+        Definition for PATCH /branch
+        ---
+        paramaters:
+            - name: id
+              type: int
+              required: true
+              description: id of the branch to update
+            - name: cut
+              type: bool
+              required: true
+              description: if the branch is visible on a tree or not
+        responses:
+            200:
+              description: Branch updated successfully
+            400:
+              description: no required parameters in payload
+        """
+        if not request.get_json():
+            return {'status': 'failure'}, 400
+        branch_req = request.get_json()
+        if branch_req['id'] and branch_req['cut']:
+            # pylint: disable=E1101
+            branch = db.session.query(Branch).filter(Branch.id == branch_req['id']).first()
+            branch.cut = branch_req['cut']
+            db.session.merge(branch)
+            db.session.commit()
+            return {'status': 'success'}, 200
+
 class BranchesApi(Resource):
     """ Class for Branch api endpoint /branches """
     def get(self, tree_id):

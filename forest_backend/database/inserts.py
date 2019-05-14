@@ -67,6 +67,9 @@ def populate_test_data(db):
     # Create Branches
     branch1 = Branch('kitten', 1)
     branch2 = Branch('molten', 2)
+    branch3 = Branch('flower', 1)
+    branch3.cut = True
     db.session.add(branch1)
     db.session.add(branch2)
+    db.session.add(branch3)
     db.session.commit()

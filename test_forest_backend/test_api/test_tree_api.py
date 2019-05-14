@@ -62,5 +62,10 @@ def test_patch_tree_updates_tree_level(get_client):
         db_tree = db.session.query(Tree).filter(Tree.id==1).first()
         assert db_tree.level_id == 1
 
+def test_get_tree_returns_only_non_cut_branches(get_client):
+    client, app = get_client
+    tree_response = client.get('api/tree/'+'floral')
+    tree = json.loads(tree_response.get_data())
 
-
+    assert len(tree['data']['branch']) == 1
+    assert tree['data']['branch'][0]['idea'] == "kitten"
