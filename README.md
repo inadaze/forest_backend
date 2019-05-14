@@ -26,6 +26,8 @@ psql postgres
 
 ## SQLAlchemy
 python migrate.py db init
+python migrate.py db migrate
+python migrate.py db upgrade
 
 ## Sphinx
 Create docs folder and run sphinx-quickstart

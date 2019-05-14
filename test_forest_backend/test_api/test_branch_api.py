@@ -22,3 +22,10 @@ def test_get_branch_returns_requested_branch(get_client):
     assert branch_response.status_code == 200
     branch = json.loads(branch_response.get_data())
     assert branch['data']['id'] == 1
+
+def test_get_branches_returns_all_branches_for_requested_tree(get_client):
+    client, app = get_client
+    branches_response = client.get('api/branches/1', headers=headers)
+    assert branches_response.status_code == 200
+    branch = json.loads(branches_response.get_data())
+    assert branch['data'][0]['id'] == 1

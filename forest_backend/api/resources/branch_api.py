@@ -77,4 +77,28 @@ class BranchApi(Resource):
         db.session.commit()
         return {"status": 'success'}, 204
 
-# TODO: need to add and get many branches at one time
+class BranchesApi(Resource):
+    """ Class for Branch api endpoint /branches """
+    def get(self, tree_id):
+        """
+        Definition for GET /branches
+        ---
+        parameters:
+            - name: tree_id
+              type: integer
+              required: true
+              description: id of the tree associated to the branch you want to fetch
+        responses:
+            200:
+                description: Branch fetched successfully
+            400:
+                description: no required parameters in payload
+        """
+
+        if tree_id:
+            # pylint: disable=E1101
+            branches = db.session.query(Branch).join(Tree).filter(
+                Tree.id == Branch.tree_id
+                ).filter(Tree.id==tree_id).all()
+            branches = BRANCHES_SCHEMA.dump(branches).data
+            return {'status': 'success', 'data': branches}, 200

@@ -6,7 +6,7 @@ from flasgger import Swagger
 from flask import Flask, Blueprint
 from flask_restful import Api
 from .resources.seed_api import SeedApi, SeedsApi
-from .resources.branch_api import BranchApi
+from .resources.branch_api import BranchApi, BranchesApi
 from .resources.tree_api import TreeApi, TreesApi, TreeUpdateApi
 from ..database.sql_db import db
 #from forest_backend.scheduler.forest_scheduler import ForestScheduler
@@ -17,6 +17,7 @@ api = Api(API_BP)
 
 api.add_resource(SeedApi, '/seed')
 api.add_resource(BranchApi, '/branch')
+api.add_resource(BranchesApi, '/branches/<int:tree_id>')
 api.add_resource(TreeApi, '/tree/<string:seed_word>')
 api.add_resource(TreesApi, '/trees')
 api.add_resource(TreeUpdateApi, '/tree')

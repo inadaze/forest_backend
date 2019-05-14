@@ -11,5 +11,7 @@
     ],
     "python.testing.pyTestArgs": [
         "test_forest_backend"
-    ]
+    ],
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
 }
